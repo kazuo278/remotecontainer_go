@@ -1,0 +1,32 @@
+version: "3"
+services:
+  golang:
+    build: golang
+    ports:
+      - "9000:9000"
+    tty: true
+    volumes:
+      - $HOME/.ssh:/root/.ssh
+      - $HOME/.gitconfig:/root/.gitconfig
+      - .local/share/fish/fish_history:/root/.local/share/fish/fish_history
+      - ..:/workspace
+  postgres:
+    build: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tips
+      LANG: ja_JP.utf8
+    volumes:
+      - ./postgres/init/:/docker-entrypoint-initdb.d
+    
+  pgweb:
+    image: sosedoff/pgweb
+    ports:
+      - 8081:8081
+    environment:
+      - DATABASE_URL=postgres://admin:password@postgres:5432/tips?sslmode=disable
+    depends_on:
+      - postgres

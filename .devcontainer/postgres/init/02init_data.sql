@@ -1,0 +1,2 @@
+INSERT INTO article(title, content, author, post_date, update_date) VALUES ('TITLE1', 'CONTENT1', 'AUTHOR1', current_timestamp, current_timestamp);
+INSERT INTO article(title, content, author, post_date, update_date) VALUES ('TITLE2', 'CONTENT2', 'AUTHOR2', current_timestamp, current_timestamp);
