@@ -3,9 +3,10 @@ package main
 import (
 	"log"
 	"net/http"
-	"tips/infrastructure/persistence"
-	"tips/interface/handler"
-	"tips/usecase"
+
+	"github.com/kazuo278/remotecontainer_go/infrastructure/persistence"
+	"github.com/kazuo278/remotecontainer_go/interface/handler"
+	"github.com/kazuo278/remotecontainer_go/usecase"
 
 	"github.com/gorilla/mux"
 )

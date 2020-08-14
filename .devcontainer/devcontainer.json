@@ -5,7 +5,6 @@
     "workspaceFolder": "/workspace",
     "settings": {
         "terminal.integrated.shell.linux": "/usr/bin/fish",
-        "go.gopath": "/workspace"
     },
     "extensions": [
         "alefragnani.bookmarks",

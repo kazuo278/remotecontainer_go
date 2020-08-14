@@ -33,7 +33,7 @@ func (repo *articlePostgresRepository) Persist(article *model.Article) error {
 
 // FindAll : DBに登録された全ての記事を取得する
 func (repo *articlePostgresRepository) FindAll() (*[]model.Article, error) {
-	engine, err := xorm.NewEngine("postgres", "dbname=tips host=localhost port=5432 user=admin password=password sslmode=disable")
+	engine, err := xorm.NewEngine("postgres", "dbname=tips host=postgres port=5432 user=admin password=password sslmode=disable")
 	if err != nil {
 		return nil, err
 	}
